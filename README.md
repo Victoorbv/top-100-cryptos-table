@@ -1,4 +1,6 @@
 # Ejercicio Front - Tabla de Cryptos
+![Ejercicio](image.png)
+
 
 ## Descripción del proyecto
 
@@ -53,3 +55,4 @@ Se hacen las siguientes comprobaciones automatizadas:
 	```bash
 	npm start
 	```
+
