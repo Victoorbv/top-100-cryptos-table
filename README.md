@@ -1,27 +1,53 @@
-# EjercicioFront
+# Ejercicio Front - Tabla de Cryptos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+## Descripción del proyecto
 
-## Development server
+Este ejercicio consiste en construir una interfaz web que muestre una **tabla de criptomonedas** consumiendo datos desde la API pública de **CoinGecko**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+La pantalla incluye un **buscador visual sin funcionalidad** (solo parte de interfaz), pensado como base para una mejora futura.
 
-## Code scaffolding
+## Objetivo del ejercicio
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Mostrar una tabla con información de criptomonedas obtenida desde CoinGecko.
+- Practicar consumo de API y renderizado de datos en Angular.
+- Presentar un buscador en la UI sin implementar lógica de filtrado.
 
-## Build
+## Tecnologías utilizadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular v15
+- Cypress v15.13
+- Bootstrap 5.1
 
-## Running unit tests
+## API utilizada
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- CoinGecko API (datos de criptomonedas)
 
-## Running end-to-end tests
+## Comprobaciones E2E con Cypress
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Se hacen las siguientes comprobaciones automatizadas:
 
-## Further help
+- Al cargar la página, se muestra al menos 1 elemento en la tabla.
+- El primer elemento de la lista es el de mayor capitalización de mercado (orden descendente).
+- El cambio de precio de las últimas 24 horas (columna 24H %) aparece en verde si es positivo o en rojo si es negativo.
+- Junto al precio de cada criptomoneda se muestra el símbolo del dólar (ejemplo: $50000).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Scripts disponibles
+
+- `npm start`: inicia el servidor de desarrollo (`ng serve`) en `http://localhost:4200/`.
+- `npm run build`: genera el build de producción.
+- `npm test`: ejecuta tests unitarios con Karma/Jasmine.
+- `npm run cypress:open`: abre Cypress para pruebas end-to-end.
+
+## Instalación
+
+1. Instalar dependencias:
+
+	```bash
+	npm install
+	```
+
+2. Iniciar el proyecto en desarrollo:
+
+	```bash
+	npm start
+	```
