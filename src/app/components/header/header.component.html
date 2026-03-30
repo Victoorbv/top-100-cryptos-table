@@ -1,0 +1,57 @@
+<nav class="navbar fixed-top bg-white">
+  <div class="container-fluid">
+    <div class="row w-100">
+      <div class="col-12 col-md-6">
+        <a class="navbar-brand mb-0" href="#" id="title"
+          ><span style="color: #f7931a">Ð</span>ECRYPTO</a
+        >
+      </div>
+
+      <div class="col-12 col-md-3 ms-md-auto">
+        <div class="position-relative">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search"
+              [(ngModel)]="searchTerm"
+              (focus)="isInputFocused = true"
+              (blur)="isInputFocused = false"
+              (input)="filterCryptos()"
+            />
+            <span class="input-group-text">
+              <i class="bi bi-search"></i>
+            </span>
+          </div>
+
+          <ul
+            class="list-group shadow-sm suggestion-list"
+            *ngIf="isInputFocused"
+          >
+            <li
+              class="list-group-item d-flex align-items-center"
+              *ngFor="let crypto of filteredCryptos"
+            >
+              <div class="d-flex align-items-center gap-2">
+                <img
+                  [src]="crypto.image"
+                  [alt]="crypto.name"
+                  width="22"
+                  height="22"
+                  class="rounded-circle"
+                />
+                <span class="px-3s"
+                  >| {{ crypto.name }}
+                  <strong>({{ crypto.symbol | uppercase }})</strong></span
+                >
+              </div>
+              <span class="ms-auto text-muted"
+                >#{{ crypto.market_cap_rank }}</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

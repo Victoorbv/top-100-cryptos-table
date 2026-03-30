@@ -1,0 +1,54 @@
+<div class="container pt-3">
+  <div
+    *ngIf="errorMessage"
+    class="alert alert-warning d-flex justify-content-between align-items-center"
+  >
+    <span>{{ errorMessage }}</span>
+  </div>
+
+  <table *ngIf="!errorMessage" class="table table-hover">
+    <thead>
+      <tr>
+        <th class="col">Rank</th>
+        <th class="col"></th>
+        <th class="col">Name</th>
+        <th class="col">Price</th>
+        <th class="col">Marketcap</th>
+        <th class="col">24H (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let crypto of cryptos">
+        <td class="crypto-market-cap-rank">{{ crypto.market_cap_rank }}</td>
+        <td class="crypto-image">
+          <img
+            [src]="crypto.image"
+            alt="{{ crypto.name }}"
+            width="32"
+            height="32"
+          />
+        </td>
+        <td class="crypto-name">{{ crypto.name }}</td>
+        <td class="crypto-current-price">
+          {{ crypto.current_price | currency: "USD" : "symbol" : "1.0-2" }}
+        </td>
+        <td class="crypto-market-cap">{{ crypto.market_cap | currency }}</td>
+        <td
+          class="crypto-price-change-24h"
+          [class.text-danger]="crypto.price_change_percentage_24h < 0"
+          [class.text-success]="crypto.price_change_percentage_24h >= 0"
+        >
+          {{ crypto.price_change_percentage_24h || '0' }} %
+          <i
+            *ngIf="crypto.price_change_percentage_24h < 0"
+            class="bi bi-caret-down-fill"
+          ></i>
+          <i
+            *ngIf="crypto.price_change_percentage_24h >= 0"
+            class="bi bi-caret-up-fill"
+          ></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
