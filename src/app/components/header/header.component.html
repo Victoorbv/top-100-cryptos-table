@@ -11,6 +11,7 @@
         <div class="position-relative">
           <div class="input-group">
             <input
+              id="search-bar"
               type="text"
               class="form-control"
               placeholder="Search"
@@ -29,6 +30,7 @@
             *ngIf="isInputFocused"
           >
             <li
+              id="search-list"
               class="list-group-item d-flex align-items-center"
               *ngFor="let crypto of filteredCryptos"
             >

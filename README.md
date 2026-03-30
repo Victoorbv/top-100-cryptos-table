@@ -28,8 +28,10 @@ Se hacen las siguientes comprobaciones automatizadas:
 
 - Al cargar la página, se muestra al menos 1 elemento en la tabla.
 - El primer elemento de la lista es el de mayor capitalización de mercado (orden descendente).
-- El cambio de precio de las últimas 24 horas (columna 24H %) aparece en verde si es positivo o en rojo si es negativo.
-- Junto al precio de cada criptomoneda se muestra el símbolo del dólar (ejemplo: $50000).
+- El cambio de precio de las últimas 24 horas aparece en verde si es positivo o en rojo si es negativo.
+- Junto al precio de cada criptomoneda se muestra el símbolo del dólar.
+- En el buscador, al escribir texto, se muestran sugerencias con un límite máximo de 5 elementos.
+- En el buscador, al escribir "Bitcoin", aparece la coincidencia exacta "Bitcoin (BTC)".
 
 ## Scripts disponibles
 

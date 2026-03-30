@@ -28,17 +28,21 @@
             height="32"
           />
         </td>
-        <td class="crypto-name">{{ crypto.name }}</td>
+        <td class="crypto-name">
+          <b>{{ crypto.name }}</b>
+        </td>
         <td class="crypto-current-price">
           {{ crypto.current_price | currency: "USD" : "symbol" : "1.0-2" }}
         </td>
-        <td class="crypto-market-cap">{{ crypto.market_cap | currency }}</td>
+        <td class="crypto-market-cap">
+          {{ crypto.market_cap | currency: "USD" : "symbol" : "1.0-2" }}
+        </td>
         <td
           class="crypto-price-change-24h"
           [class.text-danger]="crypto.price_change_percentage_24h < 0"
           [class.text-success]="crypto.price_change_percentage_24h >= 0"
         >
-          {{ crypto.price_change_percentage_24h || '0' }} %
+          {{ crypto.price_change_percentage_24h || "0" }} %
           <i
             *ngIf="crypto.price_change_percentage_24h < 0"
             class="bi bi-caret-down-fill"
