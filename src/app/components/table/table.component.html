@@ -18,7 +18,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let crypto of cryptos">
+      <tr *ngFor="let crypto of cryptos" [id]="crypto.name">
         <td class="crypto-market-cap-rank">{{ crypto.market_cap_rank }}</td>
         <td class="crypto-image">
           <img
