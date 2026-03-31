@@ -26,11 +26,11 @@
           </div>
 
           <ul
+            id="search-list"
             class="list-group shadow-sm suggestion-list"
             *ngIf="isInputFocused"
           >
             <li
-              id="search-list"
               class="list-group-item d-flex align-items-center"
               *ngFor="let crypto of filteredCryptos"
             >
