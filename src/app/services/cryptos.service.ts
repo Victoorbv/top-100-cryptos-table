@@ -7,7 +7,7 @@ import { Crypto } from '../interfaces/crypto';
   providedIn: 'root',
 })
 export class CryptosService {
-  private apiUrl =
+  private readonly apiUrl =
     'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd';
 
   constructor(private readonly http: HttpClient) {}

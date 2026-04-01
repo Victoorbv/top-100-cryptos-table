@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Crypto } from 'src/app/interfaces/crypto';
 import { CryptosService } from 'src/app/services/cryptos.service';
 
@@ -7,7 +7,7 @@ import { CryptosService } from 'src/app/services/cryptos.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'ejercicio-front';
   cryptos: Crypto[] = [];
   errorMessage = '';
